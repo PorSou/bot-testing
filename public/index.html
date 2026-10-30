@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Telegram Dashboard</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <aside class="sidebar">
+        <header class="brand">
+          <div class="logo">TG</div>
+          <div class="brand-text">
+            <h1>Telegram Dashboard</h1>
+            <div class="status">
+              <span class="dot" id="statusDot"></span>
+              <span id="statusText">Connecting...</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="search">
+          <input id="search" type="search" placeholder="Search chats" autocomplete="off" />
+        </div>
+
+        <ul class="chats" id="chatList">
+          <li class="empty">Loading chats...</li>
+        </ul>
+
+        <footer class="side-foot">
+          <button id="refresh" type="button" class="ghost">Refresh</button>
+          <span id="stats"></span>
+        </footer>
+      </aside>
+
+      <main class="chat" id="chatPane">
+        <header class="chat-head" id="chatHeader">
+          <button class="back" id="back" type="button" aria-label="Back">&#8592;</button>
+          <div class="empty-head">Select a chat to view messages</div>
+        </header>
+
+        <div class="messages" id="messages">
+          <div class="placeholder">
+            <div class="placeholder-logo">TG</div>
+            <p>Messages received by your bot will appear here.</p>
+            <p class="hint">Send a message to the bot, or add it to a group or channel.</p>
+          </div>
+        </div>
+
+        <form class="composer hidden" id="composer">
+          <textarea id="input" rows="1" placeholder="Write a message..." maxlength="4096"></textarea>
+          <button id="send" type="submit">Send</button>
+        </form>
+
+        <div class="toast" id="toast"></div>
+      </main>
+    </div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
